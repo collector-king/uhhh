@@ -2,23 +2,46 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Authorize My App</title>
+  <title>Connect to Discord</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 10%; background: #2c2f33; color: white; }
-    button { padding: 15px 30px; font-size: 18px; background: #5865F2; color: white; border: none; border-radius: 8px; cursor: pointer; }
-    button:hover { background: #4752C4; }
+    body { 
+      font-family: 'Segoe UI', sans-serif; 
+      text-align: center; 
+      margin: 0; 
+      padding: 10% 20px; 
+      background: #2c2f33; 
+      color: #fff; 
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    p { font-size: 1.2rem; margin-bottom: 2rem; color: #ccc; }
+    button { 
+      padding: 16px 36px; 
+      font-size: 1.2rem; 
+      background: #5865F2; 
+      color: white; 
+      border: none; 
+      border-radius: 12px; 
+      cursor: pointer; 
+      transition: 0.2s; 
+      box-shadow: 0 4px 12px rgba(88, 101, 242, 0.3);
+    }
+    button:hover { background: #4752C4; transform: translateY(-2px); }
   </style>
 </head>
 <body>
   <h1>Connect Your Discord</h1>
-  <p>Click below to authorize the app</p>
-  <button onclick="auth()">Authorize</button>
+  <p>Click below to link your account</p>
+  <button onclick="authorize()">Authorize App</button>
 
   <script>
-    function auth() {
+    function authorize() {
       const clientId = "1437464562310975518";
       const redirectUri = encodeURIComponent("https://bot-1112222.vercel.app/callback");
-      const scopes = encodeURIComponent("identify connections"); // Add more if needed
+      const scopes = "identify%20connections"; // Add more later if needed
       const url = `https://discord.com/oauth2/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scopes}&integration_type=1`;
       window.location.href = url;
     }
