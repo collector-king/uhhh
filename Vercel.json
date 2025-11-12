@@ -1,9 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://discord.com/oauth2/authorize?client_id=1437464562310975518&scope=bot%20applications.commands&permissions=0&integration_type=1",
-      "permanent": true
+      "source": "/callback",
+      "destination": "/callback.html"
     }
   ]
 }
